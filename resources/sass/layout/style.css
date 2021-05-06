@@ -3065,3 +3065,17 @@ ul.tag-men {
 }
 }
 /*--media-quaries-end-here--*/
+
+@font-face {
+    font-family: 'Bree-Serif-k';
+    src: url("../fonts/BreeSerif-k-Regular.otf");
+}
+
+.account-main {
+    display: flex;
+    justify-content: center;
+}
+
+.infor-left h3 {
+    font-family: 'Bree-Serif-k', sans-serif;
+}

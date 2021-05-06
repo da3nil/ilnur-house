@@ -4,14 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
+require('./bootstrap');
 
 // window.Vue = require('vue');
 
-require('./layout/jquery-1.11.0.min');
-require('./layout/simpleCart.min');
-require('./layout/memenu');
-require('./layout/jquery.easydropdown');
+
 
 /**
  * The following block of code may be used to automatically register your

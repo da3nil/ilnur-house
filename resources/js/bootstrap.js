@@ -7,10 +7,13 @@ window._ = require('lodash');
  */
 
 try {
-    window.Popper = require('popper.js').default;
+    //window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
+    //require('./layout/jquery-1.11.0.min');
+    require('./layout/simpleCart.min');
+    require('./layout/memenu');
+    require('./layout/jquery.easydropdown');
+    //require('bootstrap');
 } catch (e) {}
 
 /**

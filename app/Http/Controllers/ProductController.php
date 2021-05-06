@@ -33,7 +33,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Сохранить в БД
+     * Сохранить товар в БД
      *
      * @param  \App\Http\Requests\ProductStoreRequest  $request
      * @return \Illuminate\Http\RedirectResponse
