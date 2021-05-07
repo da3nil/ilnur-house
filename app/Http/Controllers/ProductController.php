@@ -13,13 +13,13 @@ class ProductController extends Controller
     /**
      * Показать продукты
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
         $data = Product::paginate(15);
 
-        dd($data);
+        return view('product.index');
     }
 
     /**

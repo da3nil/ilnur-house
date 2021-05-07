@@ -13,13 +13,13 @@ class CategoryController extends Controller
     /**
      * Показать категории
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
         $data = Category::all();
 
-        dd($data);
+        return view('category.index');
     }
 
     /**

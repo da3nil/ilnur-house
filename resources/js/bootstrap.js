@@ -13,7 +13,7 @@ try {
     require('./layout/simpleCart.min');
     require('./layout/memenu');
     require('./layout/jquery.easydropdown');
-    //require('bootstrap');
+    require('./layout/bootstrap');
 } catch (e) {}
 
 /**
