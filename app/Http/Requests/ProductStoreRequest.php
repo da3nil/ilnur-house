@@ -25,10 +25,11 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
+            'content' => 'required|string',
             'price' => 'required|integer',
             'img' => 'string',
             'qty' => 'required|integer',
-            'category_id' => 'required|integer|exists:categories'
+            'category_id' => 'required|integer|exists:categories,id'
         ];
     }
 }

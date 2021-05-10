@@ -28,7 +28,7 @@ class ProductUpdateRequest extends FormRequest
             'price' => 'integer',
             'img' => 'string',
             'qty' => 'integer',
-            'category_id' => 'integer|exists:categories'
+            'category_id' => 'integer|exists:categories,id'
         ];
     }
 }

@@ -3095,3 +3095,36 @@ ul.tag-men {
 /*.dropdown .carat, .dropdown .carat:after {*/
 /*    right: -17px !important;*/
 /*}*/
+
+.product-main:hover h3,
+.product-main:hover h4 span {
+    color: #73B6E1;
+    transition: 0.5s all ease;
+}
+
+.product-main:hover i {
+    background: url(../images/cart-3.png);
+    transition: 0.5s all ease;
+}
+
+.product-main:hover {
+    cursor: pointer;
+    border: 1px solid #73B6E1;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+.product-main a {
+    text-decoration: none;
+}
+
+.product-main h3 {
+    font-family: "Bree-Serif-k", sans-serif;
+}
+
+* {
+    /*font-family: "Bree-Serif-k", sans-serif;*/
+}

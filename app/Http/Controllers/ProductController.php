@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Product;
@@ -17,9 +18,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::paginate(15);
+        $products = Product::paginate(15);
 
-        return view('product.index');
+        $categories = Category::all();
+
+        return view('product.index', compact('products', 'categories'));
     }
 
     /**
@@ -57,13 +60,15 @@ class ProductController extends Controller
      * Показать продукт
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(int $id)
     {
-        $model = Product::findOrFail($id);
+        $product = Product::findOrFail($id);
 
-        dd($model);
+        $categories = Category::all();
+
+        return view('product.show', compact('product', 'categories'));
     }
 
     /**
@@ -115,7 +120,7 @@ class ProductController extends Controller
         $result = $model->delete();
 
         if ($result) {
-            return back()->with(['success' => 'Товар успешно удален']);
+            return redirect()->route('product.index')->with(['success' => 'Товар успешно удален']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка удаления товара']);
         }
