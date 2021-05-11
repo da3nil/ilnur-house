@@ -27,7 +27,7 @@ class ProductStoreRequest extends FormRequest
             'name' => 'required|string',
             'content' => 'required|string',
             'price' => 'required|integer',
-            'img' => 'string',
+            'img' => 'file',
             'qty' => 'required|integer',
             'category_id' => 'required|integer|exists:categories,id'
         ];

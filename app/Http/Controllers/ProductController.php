@@ -49,6 +49,14 @@ class ProductController extends Controller
 
         $model = (new Product())->fill($data);
 
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
+
         $result = $model->save();
 
         if ($result) {
@@ -96,6 +104,14 @@ class ProductController extends Controller
     public function update(ProductUpdateRequest $request, int $id): \Illuminate\Http\RedirectResponse
     {
         $model = Product::findOrFail($id);
+
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
 
         $data = $request->input();
 
