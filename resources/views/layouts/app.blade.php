@@ -154,9 +154,11 @@
                 </div>
                 <div class="col-md-3 header-right">
                     <div class="search-bar">
-                        <input type="text" value="Поиск" onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Поиск';}">
-                        <input type="submit" value="">
+                        <form action="">
+                            <input type="text" value="Поиск" onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = 'Поиск';}" name="search" autocomplete="off">
+                            <input type="submit" value="">
+                        </form>
                     </div>
                 </div>
                 <div class="clearfix"></div>

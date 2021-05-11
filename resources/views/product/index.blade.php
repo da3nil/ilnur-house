@@ -95,16 +95,19 @@
                 <div class="col-md-3 prdt-right sticky-top" style="position:sticky;top:20px">
                     <div class="w_sidebar" style="border: none">
                         <section class="sky-form" style="border: 1px solid #EBEBEB;margin-top: 0">
-                            <h4 style="margin-top: 0">Категории</h4>
-                            <div class="row1 scroll-pane" style="height: auto;max-height: 155px">
-                                <div class="col col-4">
-                                    @foreach($categories as $category)
-                                        <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>{{ $category->name }}</label>
-                                    @endforeach
+                            <form method="GET" action="{{ route('product.index') }}">
+                                <h4 style="margin-top: 0">Категории</h4>
+                                <div class="row1 scroll-pane" style="height: auto;max-height: 155px">
+                                    <div class="col col-4">
+                                        @foreach($categories as $category)
+                                            <label class="radio">
+                                                <input @if($category->id === Request::get('category')) checked @endif type="radio" name="category" value="{{ $category->id }}"><i></i>{{ $category->name }}
+                                            </label>
+                                        @endforeach
+                                    </div>
                                 </div>
-                            </div>
-                            <a style="width: 100%; margin: 0; text-align: center" href="#createProduct" class="add-cart item_add" data-toggle="modal"
-                               data-target="#createProduct">Применить фильтр</a>
+                                <button type="submit" style="width: 100%; margin: 0; text-align: center" class="add-cart item_add">Применить фильтр</button>
+                            </form>
                         </section>
                         <section class="sky-form" style="border: 1px solid #EBEBEB;margin-top: 20px">
                             <h4 style="margin-top: 0">Управление товарами</h4>
@@ -113,46 +116,6 @@
                                    data-target="#createProduct">Создать товар</a>
                             </div>
                         </section>
-{{--                        <section class="sky-form">--}}
-{{--                            <h4>Colour</h4>--}}
-{{--                            <ul class="w_nav2">--}}
-{{--                                <li><a class="color1" href="#"></a></li>--}}
-{{--                                <li><a class="color2" href="#"></a></li>--}}
-{{--                                <li><a class="color3" href="#"></a></li>--}}
-{{--                                <li><a class="color4" href="#"></a></li>--}}
-{{--                                <li><a class="color5" href="#"></a></li>--}}
-{{--                                <li><a class="color6" href="#"></a></li>--}}
-{{--                                <li><a class="color7" href="#"></a></li>--}}
-{{--                                <li><a class="color8" href="#"></a></li>--}}
-{{--                                <li><a class="color9" href="#"></a></li>--}}
-{{--                                <li><a class="color10" href="#"></a></li>--}}
-{{--                                <li><a class="color12" href="#"></a></li>--}}
-{{--                                <li><a class="color13" href="#"></a></li>--}}
-{{--                                <li><a class="color14" href="#"></a></li>--}}
-{{--                                <li><a class="color15" href="#"></a></li>--}}
-{{--                                <li><a class="color5" href="#"></a></li>--}}
-{{--                                <li><a class="color6" href="#"></a></li>--}}
-{{--                                <li><a class="color7" href="#"></a></li>--}}
-{{--                                <li><a class="color8" href="#"></a></li>--}}
-{{--                                <li><a class="color9" href="#"></a></li>--}}
-{{--                                <li><a class="color10" href="#"></a></li>--}}
-{{--                            </ul>--}}
-{{--                        </section>--}}
-{{--                        <section class="sky-form">--}}
-{{--                            <h4>discount</h4>--}}
-{{--                            <div class="row1 row2 scroll-pane">--}}
-{{--                                <div class="col col-4">--}}
-{{--                                    <label class="radio"><input type="radio" name="radio" checked=""><i></i>60 % and above</label>--}}
-{{--                                    <label class="radio"><input type="radio" name="radio"><i></i>50 % and above</label>--}}
-{{--                                    <label class="radio"><input type="radio" name="radio"><i></i>40 % and above</label>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-4">--}}
-{{--                                    <label class="radio"><input type="radio" name="radio"><i></i>30 % and above</label>--}}
-{{--                                    <label class="radio"><input type="radio" name="radio"><i></i>20 % and above</label>--}}
-{{--                                    <label class="radio"><input type="radio" name="radio"><i></i>10 % and above</label>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </section>--}}
                     </div>
                 </div>
                 <div class="clearfix"></div>
